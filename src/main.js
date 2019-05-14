@@ -6,7 +6,11 @@ import { routes } from './routes'
 Vue.use(VueRouter);
 
 const router = new VueRouter({
-  routes
+  routes,
+  mode: 'history',
+  scrollBehavior(to, from, savedPosition) {
+    return {x:0, y: 700};
+  }
 })
 
 new Vue({
